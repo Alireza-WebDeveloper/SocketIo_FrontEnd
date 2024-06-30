@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  html {
+    font-family: BYekan;
+  }
+}
+
+@font-face {
+  font-family: BYekan;
+  src: url('/font/Shabnam.woff') format('woff');
+}
+
+.gameLanding-Info {
+  transform: translateY(100%);
+
+  &:hover {
+    transform: translateY(0%);
+    transition: all 0.4s linear;
+  }
+}
+
+.gameLanding-Item {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+
+  &:hover .gameLanding-Info {
+    transform: translateY(0%);
+    transition: all 0.4s linear;
+  }
+}
+
+.swiper-container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+
+  &:hover {
+    background: #555;
+  }
+}
