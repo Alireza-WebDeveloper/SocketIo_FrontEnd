@@ -18,12 +18,13 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "@types/sweetalert": "^2.0.4",
     "axios": "^1.6.7",
     "jquery": "^3.7.1",
     "owl.carousel": "^2.3.4",
     "slick-carousel": "^1.8.1",
     "socket.io-client": "^4.7.5",
-    "sweetalert2": "^11.10.5",
+    "sweetalert2": "^11.12.1",
     "swiper": "^11.0.6",
     "vanilla-lazyload": "^17.8.8"
   }

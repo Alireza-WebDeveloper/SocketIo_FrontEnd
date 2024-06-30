@@ -23,7 +23,30 @@
   <body
     class="dark:bg-gray-900 bg-zinc-100 dark:text-white capitalize text-black"
   >
-    <div class="app"></div>
+    <div class="app grid grid-cols-1">
+      <header>
+        <div class="w-full flex justify-evenly p-3 bg-gray-300">
+          <!-- Title -->
+          <h1 class="chat_title font-bold">chat application</h1>
+          <!-- Links -->
+          <ul class="flex items-center gap-4">
+            <li>
+              <a href="/">home</a>
+            </li>
+            <li>
+              <a href="/about">about</a>
+            </li>
+            <li>
+              <a href="/login">login</a>
+            </li>
+            <li>
+              <a href="/logout">logout</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main id="main"></main>
+    </div>
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
