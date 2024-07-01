@@ -1,32 +1,36 @@
 // !! Styles
 import 'sass';
 import '../style.scss';
-import { io } from 'socket.io-client';
-import Notification from './helpers/notification';
 
-// !! Dom
-const main = document.querySelector('#main') as InnerHTML;
-const socket = io('http://localhost:8000/');
+// Dom
+const main = document.querySelector('#main') as HTMLElement | null;
+// !! View
+import Form from './view/form';
 
-// 1 ) Socket Io
-socket.on('messageFromServer', (dataFromServer: { data: string }) => {
-  setTimeout(() => {
-    Notification.success({ message: dataFromServer.data, timer: 2 });
-  });
+// 2 ) Handler Actions
+Form.sendMessage();
 
-  socket.emit('messageToServer', { data: 'this is from the client' });
-});
-
-//  2 ) Routes
-const Route = async (currentPath = window.location.pathname) => {
-  if (currentPath === '/') {
-    main.innerHTML = 'home page';
-  } else if (currentPath === '/about') {
-    main.innerHTML = 'about page';
-  } else if (currentPath === '/login') {
-    main.innerHTML = 'login page';
-  } else if (currentPath === '/logout') {
-    main.innerHTML = 'logout page';
+// Routes
+const Route = async (
+  currentPath: string = window.location.pathname
+): Promise<void> => {
+  if (main) {
+    switch (currentPath) {
+      case '/':
+        // main.innerHTML = 'home page';
+        break;
+      case '/about':
+        main.innerHTML = 'about page';
+        break;
+      case '/login':
+        main.innerHTML = 'login page';
+        break;
+      case '/logout':
+        main.innerHTML = 'logout page';
+        break;
+      default:
+        main.innerHTML = '404 page not found';
+    }
   }
 };
 
