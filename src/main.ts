@@ -7,7 +7,6 @@ const main = document.querySelector('#main') as HTMLElement | null;
 // !! View
 import Form from './view/form';
 import Admin from './view/admin';
-// 2 ) Handler Actions
 
 // Routes
 const Route = async (
@@ -16,8 +15,8 @@ const Route = async (
   if (main) {
     switch (currentPath) {
       case '/':
-        Form.join();
         Form.sendMessage();
+        Form.join();
         break;
       case '/about':
         main.innerHTML = 'about page';
