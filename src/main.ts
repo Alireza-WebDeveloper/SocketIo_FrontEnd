@@ -6,9 +6,8 @@ import './helpers/theme';
 const main = document.querySelector('#main') as HTMLElement | null;
 // !! View
 import Form from './view/form';
-
+import Admin from './view/admin';
 // 2 ) Handler Actions
-Form.sendMessage();
 
 // Routes
 const Route = async (
@@ -17,10 +16,12 @@ const Route = async (
   if (main) {
     switch (currentPath) {
       case '/':
-        // main.innerHTML = 'home page';
+        Form.join();
+        Form.sendMessage();
         break;
       case '/about':
         main.innerHTML = 'about page';
+        Admin.connectToSocket();
         break;
       case '/login':
         main.innerHTML = 'login page';
