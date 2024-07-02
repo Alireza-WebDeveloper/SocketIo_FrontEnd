@@ -1,7 +1,7 @@
 // !! Styles
 import 'sass';
 import '../style.scss';
-
+import './helpers/theme';
 // Dom
 const main = document.querySelector('#main') as HTMLElement | null;
 // !! View
